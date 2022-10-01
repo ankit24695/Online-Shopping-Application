@@ -2,6 +2,8 @@ package com.shopping.presentation;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,7 +25,7 @@ public class AddressController {
 	private AddressService addressService;
 	
 	@PostMapping("/addaddress")
-	public ResponseEntity<Address> addAddress(@RequestBody Address address){
+	public ResponseEntity<Address> addAddress(@Valid @RequestBody Address address){
 		
 		
 		Address savedAddress= addressService.addAddress(address);
@@ -34,7 +36,7 @@ public class AddressController {
 	}
 	
 	@PutMapping("/updateaddress")
-	public ResponseEntity<Address> updateAddress(@RequestBody Address address) throws AddressException{
+	public ResponseEntity<Address> updateAddress(@Valid @RequestBody Address address) throws AddressException{
 		
 		
 		Address updatedAddress= addressService.updateAddress(address);

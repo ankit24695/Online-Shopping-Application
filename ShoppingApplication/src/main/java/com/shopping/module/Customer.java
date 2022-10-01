@@ -17,6 +17,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -26,13 +27,17 @@ public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer customerId;
-	private String firstName;
+	@NotNull
+    private String firstName;
+	@NotNull
 	private String lastName;
+	@Size(min = 10, max=10, message = "Please Enter a valid mobile number")
 	private String mobileNumber;
 	@NotNull
-	@Email
+	@Email(message = "Please enter a valid Email Id")
 	private String email;
 	@NotNull
+	@Size(min = 5, max=10, message = "Please enter the password size in range (5-10)")
 	private String password;
 	@NotNull
 	private String role;

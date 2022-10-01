@@ -1,5 +1,7 @@
 package com.shopping.presentation;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,7 +24,7 @@ public class LoginController {
 	private LoginService loginservice;
 	
 	@PostMapping("/login")
-	public ResponseEntity<String> login(@RequestBody LoginData logindata) throws LoginException{
+	public ResponseEntity<String> login(@Valid @RequestBody LoginData logindata) throws LoginException{
 		
 		String loginMessage = loginservice.logInAccount(logindata);
 		
