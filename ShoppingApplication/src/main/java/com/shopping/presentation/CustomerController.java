@@ -30,7 +30,7 @@ public class CustomerController {
 	
 	
 	@PostMapping("/addcustomer")
-	public ResponseEntity<CustomerDTO> addCustomer(@RequestBody Customer customer) throws CustomerException{
+	public ResponseEntity<CustomerDTO> addCustomer(@Valid @RequestBody Customer customer) throws CustomerException{
 		
 		CustomerDTO newCustomer = customerService.addCustomer(customer);
 		
@@ -39,7 +39,7 @@ public class CustomerController {
 	}
 	
     @PutMapping("/updatecustomer")
-	public ResponseEntity<CustomerDTO> updateCustomer(@RequestBody Customer customer) throws CustomerException{
+	public ResponseEntity<CustomerDTO> updateCustomer(@Valid @RequestBody Customer customer) throws CustomerException{
 		
 		CustomerDTO updatedCustomer = customerService.updateCustomer(customer);
 		

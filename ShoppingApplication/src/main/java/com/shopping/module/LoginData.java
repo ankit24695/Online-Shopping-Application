@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Email;
 
 @Entity
 public class LoginData {
@@ -16,6 +17,7 @@ public class LoginData {
 	@Column(unique = true)
     private Integer userId;
 	
+	@Email(message = "Please Enter the proper email")
 	private String userName;
 	
 	private String password;
