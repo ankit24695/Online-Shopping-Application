@@ -34,6 +34,7 @@ public class Customer {
 	@Size(min = 10, max=10, message = "Please Enter a valid mobile number")
 	private String mobileNumber;
 	@NotNull
+	@Column(unique = true)
 	@Email(message = "Please enter a valid Email Id")
 	private String email;
 	@NotNull

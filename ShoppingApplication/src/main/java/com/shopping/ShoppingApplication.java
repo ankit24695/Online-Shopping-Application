@@ -38,7 +38,7 @@ public class ShoppingApplication {
 	
 	 private ApiInfo getApiInfo() {
 	       return new ApiInfo(
-	    		   "Ecommerce website",
+	    		   "Online Shopping Application",
 	    		   "Team members :\n \"Ankit Chaurasia\",\r\n"
 	    		   + "\"Gautam Deo prasad\",\r\n"
 	    		   + "\"Shivraj krishna punjare\",\r\n"

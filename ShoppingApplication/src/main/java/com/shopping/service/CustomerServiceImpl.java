@@ -35,7 +35,7 @@ public class CustomerServiceImpl implements CustomerService{
 	@Override
 	public CustomerDTO updateCustomer(Customer customer) throws CustomerException {
 		
-		Optional<Customer> opt = customerDao.findByEmail(customer.getEmail());
+		Optional<Customer> opt = customerDao.findById(customer.getCustomerId());
 		
 		if(opt.isPresent()) {
 			Customer updatedCustomer = customerDao.save(customer);
@@ -45,7 +45,7 @@ public class CustomerServiceImpl implements CustomerService{
 			
 		}
 		else {
-			throw new CustomerException("No customer exist with this email id");
+			throw new CustomerException("No customer exist with this id");
 		}
 		
 		
