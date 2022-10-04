@@ -12,4 +12,4 @@ Here we mainly worked on providing the backend services which are required to ru
 </p>
 <p>My task in this project was to handle the login, logout and cart serrvices.
 </p>
-<p>Tech stack:  Springboot, Hibernate, Java</p>
+<p>Tech stack:  Springboot, Hibernate, Java, Spring-Data-JPA, MySQL</p>
